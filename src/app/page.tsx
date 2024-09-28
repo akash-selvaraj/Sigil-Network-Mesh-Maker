@@ -114,7 +114,7 @@ const Home: React.FC = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
 
       {/* Navbar with header and algorithm selector */}
-      <nav className="w-full bg-blue-500 p-4 text-white flex justify-between items-center mb-6">
+      <nav className="w-full bg-blue-500 rounded p-4 text-white flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Sigil Network Mesh Maker</h1>
         
         <div className="flex items-center">

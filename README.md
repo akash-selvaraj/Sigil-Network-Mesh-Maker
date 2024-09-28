@@ -2,6 +2,7 @@
 ---
 
 # Sigil - Mobile Network Hotspot Detection During Floods
+![sigil](https://github.com/user-attachments/assets/5dc7e6f4-fe36-4283-a38f-ead010a58118)
 
 This project, **Sigil**, is designed to help identify optimal mobile network hotspots in the event of floods. It uses Reinforcement Learning (RL) to determine areas with better mobile data speeds, allowing users to find efficient mobile networks quickly during emergencies.
 

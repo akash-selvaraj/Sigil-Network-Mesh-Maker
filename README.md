@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+---
+
+# Sigil - Mobile Network Hotspot Detection During Floods
+![sigil](https://github.com/user-attachments/assets/5dc7e6f4-fe36-4283-a38f-ead010a58118)
+
+This project, **Sigil**, is designed to help identify optimal mobile network hotspots in the event of floods. It uses Reinforcement Learning (RL) to determine areas with better mobile data speeds, allowing users to find efficient mobile networks quickly during emergencies.
+
+## Project Structure
+
+- **Frontend**: Built using Next.js, the frontend displays results related to mobile data speeds and network hotspots.
+- **Backend**: The backend is a Python-based application (`app.py`), which utilizes RL algorithms to analyze mobile network speed and availability.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Backend Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before starting the frontend, you need to set up the backend Python server.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Navigate to the backend folder:
+
+   ```
+   cd backend
+   ```
+
+2. Create a virtual environment:
+
+   ```
+   python3 -m venv venv
+   ```
+
+3. Activate the virtual environment:
+
+   - On macOS/Linux:
+     ```
+     source venv/bin/activate
+     ```
+   - On Windows:
+     ```
+     venv\Scripts\activate
+     ```
+
+4. Install the necessary dependencies from `requirements.txt`:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+5. Run the backend server:
+
+   ```
+   python app.py
+   ```
+
+### 2. Frontend Setup
+
+Once the backend is running, proceed to set up the frontend.
+
+1. Navigate to the Next.js project folder:
+
+   ```
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. Run the development server:
+
+   ```
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. Open `http://localhost:3000` with your browser to see the frontend connected to the backend.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Description
 
-## Learn More
+**Sigil** is intended to be used during floods, where mobile network stability is crucial. Using Reinforcement Learning, the system analyzes mobile data speeds across different areas and suggests the best locations for optimal network access. This information is presented to users through a responsive Next.js frontend, making it accessible and easy to use during emergencies.
 
-To learn more about Next.js, take a look at the following resources:
+### Resources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js Documentation - learn about Next.js features and API.
+- Learn Next.js - an interactive Next.js tutorial.
+- Vercel Deployment - Deploy your app with ease using Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

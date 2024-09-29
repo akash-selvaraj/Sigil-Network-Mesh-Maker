@@ -111,15 +111,24 @@ const SubmitData: React.FC = () => {
     try {
       const response = await axios.post('http://localhost:5000/submit_data', data);
       if (response.status === 200) {
-        alert('Data submitted successfully!');
+        console.log('Data submitted successfully!');
       } else {
-        alert('Failed to submit data.');
+        console.error('Failed to submit data.');
       }
     } catch (error) {
       console.error('Error submitting data:', error);
-      alert('Error submitting data. Please try again later.');
     }
   };
+
+  // Automatically submit data every 30 seconds
+  useEffect(() => {
+    const submitInterval = setInterval(() => {
+      setTimestamp(new Date().toISOString()); // Update timestamp
+      submitData(); // Submit data automatically
+    }, 30000); // 30 seconds interval
+
+    return () => clearInterval(submitInterval); // Cleanup on component unmount
+  }, [position, uploadSpeed, downloadSpeed, timestamp]);
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -128,12 +137,6 @@ const SubmitData: React.FC = () => {
       <p className="text-lg">Upload Speed: {uploadSpeed.toFixed(2)} Mbps</p>
       <p className="text-lg">Download Speed: {downloadSpeed.toFixed(2)} Mbps</p>
       <p className="text-lg">Timestamp: {timestamp}</p>
-      <button
-        onClick={submitData}
-        className="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-      >
-        Submit Data
-      </button>
     </div>
   );
 };
